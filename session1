@@ -1,0 +1,20 @@
+==================session 1=======================
+CREATE TABLE sales ( sale_id INT PRIMARY KEY, product_name VARCHAR(50), sale_date DATE, sale_amount INT);
+INSERT INTO sales (sale_id, product_name, sale_date, sale_amount) VALUES (1, 'Widget A', '2024-08-01', 100), (2, 'Widget B', '2024-08-05', 150), (3, 'Widget C', '2024-08-07', 200), (4, 'Widget A', '2024-08-10', 120), (5, 'Widget B', '2024-08-15', 180),(6, 'Widget C', '2024-08-20', 250);
+SELECT sale_id, product_name,(sale_date) AS sale_date_only FROM sales;
+SELECT sale_id, product_name, YEAR(sale_date) AS sale_year
+FROM sales;
+SELECT sale_id, product_name,
+       DATEADD(DAY, 7, sale_date) AS sale_date_plus_7_days
+FROM sales;
+SELECT
+    ABS(-25) AS abs_value,            
+    ROUND(12.678, 2) AS rounded_value,
+    POWER(2, 5) AS power_value,       
+    17 % 5 AS modulus_value;         
+    SELECT 
+    UPPER('database') AS upper_text,
+    LOWER('SQL') AS lower_text,
+    len ('Computer') AS text_length,
+    SUBSTRING('FullStack', 1, 4) AS sub_text,
+    CONCAT('My', 'SQL') AS combined_text;
